@@ -5,13 +5,14 @@
     "@prisma/client": "2.14.0"
   },
   "scripts": {
-    "start": "node index.js",
     "prisma:introspect": "prisma introspect",
     "prisma:generate": "prisma generate",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "seed": "node scripts/seed"
   },
   "devDependencies": {
     "@prisma/cli": "2.14.0",
+    "prettier": "^2.2.1",
     "vercel": "21.1.0"
   }
 }

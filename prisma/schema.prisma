@@ -1,25 +1,32 @@
-datasource db {
-    provider = "mysql"
-    url = env("DATABASE_URL")
+generator client {
+  provider = "prisma-client-js"
 }
 
-generator client {
-    provider = "prisma-client-js"
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
 }
 
 model User {
-    id Int @default(autoincrement()) @id
-    email String @unique
-    name String?
-}
-
-model Organisation {
-    id Int @default(autoincrement()) @id
+  id Int @id @default(autoincrement())
+  email String @unique
+  firstName String?
+  lastName String?
+  Organisation Organisation @relation(fields: [organisationId], references: [id])
+  organisationId Int
 }
 
 model Feedback {
-    id Int @default(autoincrement()) @id
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-    message String
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  message String
+  Organisation Organisation @relation(fields: [organisationId], references: [id])
+  organisationId Int
+}
+
+model Organisation {
+  id Int @id @default(autoincrement())
+  name String
+  User User[]
 }
