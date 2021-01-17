@@ -1,5 +1,5 @@
 {
-  "name": "2",
+  "name": "3",
   "dependencies": {
     "@prisma/client": "2.14.0"
   },
