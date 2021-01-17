@@ -18,6 +18,11 @@
       "src": "/api/users",
       "methods": ["GET"],
       "dest": "/api/users.js"
+    },
+    {
+      "src": "/api/organisations",
+      "methods": ["GET"],
+      "dest": "/api/organisations.js"
     }
   ]
 }

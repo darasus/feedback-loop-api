@@ -5,8 +5,8 @@
     "@prisma/client": "2.14.0"
   },
   "scripts": {
-    "prisma:introspect": "prisma introspect",
     "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init --preview-feature",
     "postinstall": "prisma generate",
     "seed": "node scripts/seed"
   },

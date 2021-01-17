@@ -7,12 +7,18 @@ datasource db {
   url = env("DATABASE_URL")
 }
 
+model Organisation {
+  id Int @id @default(autoincrement())
+  name String
+  User User[]
+}
+
 model User {
   id Int @id @default(autoincrement())
   email String @unique
   firstName String?
   lastName String?
-  Organisation Organisation @relation(fields: [organisationId], references: [id])
+  organisation Organisation @relation(fields: [organisationId], references: [id])
   organisationId Int
 }
 
@@ -21,12 +27,6 @@ model Feedback {
   createdAt DateTime @default(now())
   updatedAt DateTime
   message String
-  Organisation Organisation @relation(fields: [organisationId], references: [id])
+  rganisation Organisation @relation(fields: [organisationId], references: [id])
   organisationId Int
-}
-
-model Organisation {
-  id Int @id @default(autoincrement())
-  name String
-  User User[]
 }
