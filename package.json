@@ -1,5 +1,6 @@
 {
-  "name": "3",
+  "name": "@feedback-loop/api",
+  "license": "ISC",
   "dependencies": {
     "@prisma/client": "2.14.0"
   },

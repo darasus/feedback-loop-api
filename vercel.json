@@ -10,19 +10,14 @@
   },
   "routes": [
     {
-      "src": "/api/users",
+      "src": "/api/feedbacks",
       "methods": ["GET"],
-      "dest": "/api/getUsers.js"
-    },
-    {
-      "src": "/api/posts",
-      "methods": ["GET"],
-      "dest": "/api/getPosts.js"
+      "dest": "/api/feedbacks.js"
     },
     {
       "src": "/api/users",
-      "methods": ["POST", "PUT"],
-      "dest": "/api/createUser.js"
+      "methods": ["GET"],
+      "dest": "/api/users.js"
     }
   ]
 }
